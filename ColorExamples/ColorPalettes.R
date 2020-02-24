@@ -42,6 +42,18 @@ pal(diverging_hcl(7, c = 100, l = c(50, 90), power = 1))
 pal(diverging_hcl(7, h = c(130, 43), c = 100, l = c(70, 90)))
 pal(diverging_hcl(7, h = c(180, 330), c = 59, l = c(75, 95)))
 
+# Colorspace's color-vision deficiency simulators
+pal(protan(diverging_hcl(7)))  #protan() protanomaly, red-green (missing/defective L cones)
+pal(deutan(diverging_hcl(7)))  #deutan() deutanomaly, green-blind/weak (missing/defective M cones)
+pal(tritan(diverging_hcl(7)))  #tritan() tritanomaly, blue-yellow (missing/defective S)
+
+# Pick a color palette: 
+hcl_palettes(plot = TRUE)
+
+# Use colorspace palettes with ggplot2
+ggplot(iris, aes(x = Sepal.Length, fill = Species)) + geom_density(alpha = 0.6) +
+  scale_fill_discrete_qualitative(palette = "Dynamic")
+
 #### viridis package ####
 #install.packages("viridis",dependencies=TRUE)
 library(viridis)
@@ -72,7 +84,7 @@ library(tanagR)
 names(tanagr_palettes)
 
 # Code from tanagR Github ReadMe
-pal = tanagr_palette("bangsia_edwardsi")
+pal = tanagr_palette("chrysothlypis_salmoni")
 data(iris)
 plot(iris$Sepal.Width,
      iris$Sepal.Length,
@@ -80,3 +92,6 @@ plot(iris$Sepal.Width,
      pch = 19,
      cex = 2)
 viz_palette("bangsia_edwardsi")
+
+
+
