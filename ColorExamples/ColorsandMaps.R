@@ -12,7 +12,7 @@ boom<-melt(volcano)
 range(boom$value) # Check out the range of values to pick scale breaks
 
 boom$levels<-cut(boom$value,breaks=c(90,100,125,150,175,200)) # create breaks in values
-#boom$levels<-cut(boom$value,breaks=seq(90,200,by=10))
+boom$levels<-cut(boom$value,breaks=seq(90,200,by=10))
 
 colors_surface<-terrain_hcl(nlevels(boom$levels), c = c(65, 0), l = c(45, 90), power = c(1/2, 1.5)) # Create color
 #colors_surface<-sequential_hcl(nlevels(boom$levels), c = 0, l=c(30,90), power = 2.0)

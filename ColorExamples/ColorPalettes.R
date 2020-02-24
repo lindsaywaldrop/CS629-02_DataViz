@@ -24,10 +24,10 @@ pal <- function(col, border = "light gray", ...){
 }
 
 # Qualitative Color Palettes
-pal(rainbow_hcl(4, start = 30, end = 300), main = "dynamic")
-pal(rainbow_hcl(4, start = 60, end = 240), main = "harmonic")
+pal(rainbow_hcl(14, start = 30, end = 300), main = "dynamic")
+pal(rainbow_hcl(14, start = 60, end = 240), main = "harmonic")
 pal(rainbow_hcl(4, start = 270, end = 150), main = "cold")
-pal(rainbow_hcl(4, start = 90, end = -30), main = "warm")
+pal(rainbow_hcl(14, start = 90, end = -30), main = "warm")
 
 # Sequential Color Palettes
 pal(sequential_hcl(12, c = 0, power = 2.2))

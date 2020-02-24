@@ -9,8 +9,9 @@ library(wesanderson)
 phones<-melt(WorldPhones) # Melt WorldPhones data set into a data frame
 
 # Nominal coding with ggplot2 default color palette
-baseplot<-ggplot(phones,aes(x=Var1,y=value,fill==Var2)) +  # Sets aesthetics 
+baseplot<-ggplot(phones,aes(x=Var1,y=value,fill=Var2)) +  # Sets aesthetics 
   geom_point(aes(fill=Var2),color="black",size=4,shape=21) +  # specifies mapping
+  xlab("Year") + ylab("No. of phones") + labs(fill="Regions") +
   theme_bw()   # Sets background to white and lines to black
 
 # Nominal coding with custom color palette
