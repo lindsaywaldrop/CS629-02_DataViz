@@ -13,7 +13,6 @@ ggplot(iris, aes(Sepal.Width,Sepal.Length,color=Species,fill=Species,shape=Speci
   scale_fill_manual(values=c("gray10","red","black")) + 
   scale_color_manual(values=c("black","red","black"))
 
-<<<<<<< HEAD
 # Example of a graph with integral display dimensions
 library(ggforce)
 
