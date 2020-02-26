@@ -34,5 +34,4 @@ scale<-function(data){
 # Sepal length is x axis of ellipse, sepal width is y axis of ellipse. 
 ggplot(iris,aes(x0=x,y0=y,a=scale(Sepal.Length)/2,b=scale(Sepal.Width)/2,angle=0)) + 
   geom_ellipse(fill="black") + coord_fixed()
-=======
->>>>>>> 2598ae47c55cf0705a873ab066f63372925259d1
+
