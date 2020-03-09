@@ -20,7 +20,7 @@ ggplot(hearts,aes(x=sex,y=cp))+geom_bar(stat="summary",fun.y="median")
 hearts$cp<-as.factor(hearts$cp)
 
 # Barplot showing counts of chest pain versus sex
-ggplot(hearts,aes(x=cp,fill=sex))+geom_bar(stat="count")
+ggplot(hearts,aes(x=cp,fill=sex))+geom_bar(stat="count",position="stack")
 
 # Barplot showing frequencies of chest pain versus sex
 ggplot(hearts_long,aes(x=cp,fill=sex))+geom_bar(position="fill")
