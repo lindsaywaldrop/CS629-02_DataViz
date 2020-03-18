@@ -3,6 +3,10 @@
 # Install rayshader:
 #remotes::install_github("tylermorganwall/rayshader")
 # Note: on Mac, it requires installation of XQuartz: https://www.xquartz.org/
+# DevTools needs to be installed in R:
+#install.packages("devtools")
+#library("devtools")
+#install_github("tylermorganwall/rayshader")
 
 #### Load Required Packages ####
 library(rayshader)
@@ -78,6 +82,13 @@ render_snapshot(clear=TRUE)
 
 # For more info on creating map data sets, check out: https://wcmbishop.github.io/rayshader-demo/ 
 
-
+montereybay %>%
+  sphere_shade(zscale = 10, texture = "imhof1") %>%
+  add_shadow(ray_shade(montereybay, zscale = 50)) %>%
+  add_shadow(ambient_shade(montereybay, zscale = 50)) %>%
+  plot_3d(montereybay, zscale = 50, theta = -45, phi = 45, water = TRUE,
+          windowsize = c(1000,800), zoom = 0.75, waterlinealpha = 0.3,
+          wateralpha = 0.5, watercolor = "lightblue", waterlinecolor = "white")
+render_snapshot()
 
 
